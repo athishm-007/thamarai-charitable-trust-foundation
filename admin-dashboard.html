@@ -1,0 +1,857 @@
+<!doctype html>
+
+<html lang="ta">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>
+      நிர்வாகி கட்டுப்பாட்டு மையம் | தாமரை அறக்கட்டளை தொண்டு நிறுவனம்
+    </title>
+
+    <meta
+      name="description"
+      content="தாமரை அறக்கட்டளை தொண்டு நிருவனத்தின் பாதுகாக்கப்பட்ட நிர்வாக கட்டுப்பாட்டு மையம்."
+    />
+
+    <meta name="robots" content="noindex, nofollow" />
+
+    <link rel="icon" type="image/jpg" href="images/logo.jpg" />
+
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/admin.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+  </head>
+
+  <body>
+    <!-- Sidebar Overlay for Mobile/Tablet Toggle -->
+    <div id="sidebarOverlay" class="sidebar-overlay"></div>
+
+    <!-- ======================================== -->
+
+    <!-- SIDEBAR -->
+
+    <!-- ======================================== -->
+
+    <aside class="sidebar">
+      <div class="sidebar-logo">
+        <img src="images/logo.jpg" alt="Trust Logo" />
+
+        <h2>நிர்வாகி</h2>
+      </div>
+
+      <ul>
+        <li>
+          <a href="index.html"> 🏠 முகப்பு (Home) </a>
+        </li>
+
+        <li>
+          <a href="#dashboardStatistics"> டாஷ்போர்டு </a>
+        </li>
+
+        <li>
+          <a href="#memberApprovals"> உறுப்பினர் ஒப்புதல்கள் </a>
+        </li>
+
+        <li>
+          <a href="#memberManagement"> உறுப்பினர்கள் </a>
+        </li>
+
+        <li>
+          <a href="#eventManagement"> நிகழ்வுகள் </a>
+        </li>
+
+        <li>
+          <a href="#eventRegistrations"> நிகழ்வு பதிவுகள் </a>
+        </li>
+
+        <li>
+          <a href="#bloodDonors"> இரத்த தானதாரர்கள் </a>
+        </li>
+
+        <li>
+          <a href="#bloodRequests"> இரத்த கோரிக்கைகள் </a>
+        </li>
+
+        <li>
+          <a href="#announcements"> அறிவிப்புகள் </a>
+        </li>
+
+        <li>
+          <a href="#galleryManagement"> காட்சியகம் </a>
+        </li>
+
+        <li>
+          <a href="#problemReports"> பிரச்சினை பதிவுகள் </a>
+        </li>
+
+        <li>
+          <a href="#contactMessages"> தொடர்பு செய்திகள் </a>
+        </li>
+
+        <li>
+          <a href="#donationManagement"> நன்கொடைகள் </a>
+        </li>
+
+        <li>
+          <a href="#testimonialManagement"> கருத்துக்கள் </a>
+        </li>
+
+
+        <li>
+          <a href="#excelExport"> Excel Export </a>
+        </li>
+
+        <li>
+          <a href="#adminSettings"> அமைப்புகள் </a>
+        </li>
+
+        <li>
+          <button id="adminLogoutBtn">வெளியேறு</button>
+        </li>
+      </ul>
+    </aside>
+
+    <!-- ======================================== -->
+
+    <!-- MAIN CONTENT -->
+
+    <!-- ======================================== -->
+
+    <main class="dashboard-content">
+      <!-- ======================================== -->
+
+      <!-- TOP BAR -->
+
+      <!-- ======================================== -->
+
+      <div id="dashboardLoader" class="dashboard-loader" style="display: none">
+        தரவு ஏற்றப்படுகிறது...
+      </div>
+
+      <section class="topbar">
+        <div class="topbar-left">
+          <button
+            id="sidebarToggle"
+            class="sidebar-toggle"
+            aria-label="Toggle Sidebar"
+          >
+            <svg
+              viewBox="0 0 24 24"
+              width="24"
+              height="24"
+              stroke="currentColor"
+              stroke-width="2"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+          </button>
+          <h1>நிர்வாகி கட்டுப்பாட்டு மையம்</h1>
+        </div>
+
+        <div id="adminInfo" class="admin-info">வரவேற்கிறோம்</div>
+      </section>
+
+      <!-- ======================================== -->
+
+      <!-- DASHBOARD STATISTICS -->
+
+      <!-- ======================================== -->
+
+      <section id="dashboardStatistics" class="statistics-section">
+        <div class="stat-card">
+          <h2 id="totalMembers">0</h2>
+
+          <p>மொத்த உறுப்பினர்கள்</p>
+        </div>
+
+        <div class="stat-card">
+          <h2 id="pendingApprovals">0</h2>
+
+          <p>நிலுவையில் உள்ள ஒப்புதல்கள்</p>
+        </div>
+
+        <div class="stat-card">
+          <h2 id="eventRegistrationsCount">0</h2>
+
+          <p>நிகழ்வு பதிவுகள்</p>
+        </div>
+
+        <div class="stat-card">
+          <h2 id="bloodDonorsCount">0</h2>
+          <p>இரத்த தானதாரர்கள்</p>
+        </div>
+
+        <div class="stat-card">
+          <h2 id="bloodRequestsCount">0</h2>
+          <p>செயலில் உள்ள இரத்த கோரிக்கைகள்</p>
+        </div>
+
+        <div class="stat-card">
+          <h2 id="donationsCount">0</h2>
+          <p>நன்கொடைகள்</p>
+        </div>
+      </section>
+
+      <!-- ======================================== -->
+
+      <!-- MEMBER APPROVALS -->
+
+      <!-- ======================================== -->
+
+      <section id="memberApprovals">
+        <div class="section-header">
+          <h2>உறுப்பினர் ஒப்புதல்கள்</h2>
+        </div>
+
+        <div class="security-note">
+          ⚠️ உறுப்பினர் ஒப்புதல் அல்லது நிராகரிப்பு செய்யப்பட்டவுடன்
+          பதிவேற்றப்பட்ட அரசு அடையாள ஆவணம் தானாகவே நீக்கப்படும்.
+        </div>
+
+        <div class="admin-table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>பெயர்</th>
+
+                <th>புகைப்படம்</th>
+
+                <th>மொபைல்</th>
+
+                <th>மின்னஞ்சல்</th>
+
+                <th>வகை</th>
+
+                <th>நிலை</th>
+
+                <th>செயல்</th>
+              </tr>
+            </thead>
+
+            <tbody id="memberApprovalsTableBody"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ======================================== -->
+
+      <!-- MEMBER MANAGEMENT -->
+
+      <!-- ======================================== -->
+
+      <section id="memberManagement">
+        <div class="section-header">
+          <h2>உறுப்பினர் மேலாண்மை</h2>
+        </div>
+
+        <input
+          id="memberSearchInput"
+          type="text"
+          placeholder="உறுப்பினர் எண் அல்லது பெயர் மூலம் தேடவும்"
+        />
+
+        <div class="admin-table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>உறுப்பினர் எண்</th>
+
+                <th>பெயர்</th>
+
+                <th>புகைப்படம்</th>
+
+                <th>இரத்த வகை</th>
+
+                <th>மொபைல்</th>
+
+                <th>உறுப்பினர் வகை</th>
+
+                <th>செயல்கள்</th>
+              </tr>
+            </thead>
+
+            <tbody id="membersTableBody"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ======================================== -->
+
+      <!-- EVENT MANAGEMENT -->
+
+      <!-- ======================================== -->
+
+      <section id="eventManagement">
+        <div class="section-header">
+          <h2>நிகழ்வு மேலாண்மை</h2>
+        </div>
+
+        <div class="admin-actions">
+          <button id="createEventBtn">புதிய நிகழ்வு உருவாக்கு</button>
+        </div>
+
+        <div class="admin-table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>படம்</th>
+
+                <th>நிகழ்வு</th>
+
+                <th>தேதி</th>
+
+                <th>இடம்</th>
+
+                <th>நிலை</th>
+
+                <th>செயல்கள்</th>
+              </tr>
+            </thead>
+
+            <tbody id="eventsTableBody"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ======================================== -->
+
+      <!-- EVENT REGISTRATIONS -->
+
+      <!-- ======================================== -->
+
+      <section id="eventRegistrations">
+        <div class="section-header">
+          <h2>நிகழ்வு பதிவு விவரங்கள்</h2>
+        </div>
+
+        <div class="admin-table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>பெயர்</th>
+
+                <th>மொபைல்</th>
+
+                <th>மின்னஞ்சல்</th>
+
+                <th>நிகழ்வு</th>
+
+                <th>செயல்</th>
+              </tr>
+            </thead>
+
+            <tbody id="eventRegistrationsTableBody"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ======================================== -->
+
+      <!-- BLOOD DONORS -->
+
+      <!-- ======================================== -->
+
+      <section id="bloodDonors">
+        <div class="section-header">
+          <h2>இரத்த தானதாரர்கள்</h2>
+        </div>
+
+        <div class="search-box">
+          <input
+            id="bloodSearchInput"
+            type="text"
+            placeholder="இரத்த வகை மூலம் தேடவும்"
+          />
+        </div>
+
+        <div class="admin-table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>பெயர்</th>
+
+                <th>இரத்த வகை</th>
+
+                <th>மொபைல்</th>
+
+                <th>மாவட்டம்</th>
+
+                <th>செயல்</th>
+              </tr>
+            </thead>
+
+            <tbody id="bloodDonorsTableBody"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ======================================== -->
+
+      <!-- BLOOD REQUESTS -->
+
+      <!-- ======================================== -->
+
+      <section id="bloodRequests">
+        <div class="section-header">
+          <h2>இரத்த கோரிக்கைகள்</h2>
+        </div>
+
+        <div class="admin-table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>நோயாளர்</th>
+
+                <th>இரத்த வகை</th>
+
+                <th>மருத்துவமனை</th>
+
+                <th>செயல்</th>
+              </tr>
+            </thead>
+
+            <tbody id="bloodRequestsTableBody"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ======================================== -->
+
+      <!-- ANNOUNCEMENTS -->
+
+      <!-- ======================================== -->
+
+      <section id="announcements">
+        <div class="section-header">
+          <h2>அறிவிப்புகள்</h2>
+        </div>
+
+        <textarea
+          id="announcementText"
+          rows="5"
+          placeholder="புதிய அறிவிப்பை உள்ளிடவும்"
+        ></textarea>
+
+        <br /><br />
+
+        <button id="publishAnnouncementBtn">அறிவிப்பு வெளியிடு</button>
+
+        <br /><br />
+        <div class="admin-table-wrapper" style="margin-top: 20px;">
+          <table>
+            <thead>
+              <tr>
+                <th>அறிவிப்பு</th>
+                <th>செயல்</th>
+              </tr>
+            </thead>
+            <tbody id="announcementsTableBody"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ======================================== -->
+
+      <!-- GALLERY MANAGEMENT -->
+
+      <!-- ======================================== -->
+
+      <section id="galleryManagement">
+        <div class="section-header">
+          <h2>காட்சியக மேலாண்மை</h2>
+        </div>
+
+        <div id="galleryPreviewContainer"></div>
+
+        <input id="galleryUploadInput" type="file" multiple accept="image/*" />
+
+        <br /><br />
+
+        <button id="uploadGalleryBtn">புகைப்படங்களை பதிவேற்று</button>
+
+        <br /><br />
+
+        <input
+          id="youtubeLinkInput"
+          type="url"
+          placeholder="YouTube Video Link"
+        />
+        <br /><br />
+
+        <button id="addYoutubeBtn">வீடியோ இணைப்பை சேர்</button>
+
+        <div id="videoPreviewContainer" style="margin-top: 20px"></div>
+      </section>
+
+      <!-- ======================================== -->
+
+      <!-- TESTIMONIALS MANAGEMENT -->
+
+      <!-- ======================================== -->
+
+      <section id="testimonialManagement">
+        <h2>மக்களின் கருத்துக்கள்</h2>
+
+        <button id="addTestimonialBtn">புதிய கருத்து</button>
+
+        <div id="testimonialsAdmin"></div>
+      </section>
+
+      <!-- ======================================== -->
+
+      <!-- PROBLEM REPORTS MANAGEMENT -->
+
+      <!-- ======================================== -->
+
+      <section id="problemReports">
+        <div class="section-header">
+          <h2>பொதுமக்கள் பிரச்சினை பதிவுகள்</h2>
+        </div>
+
+        <div class="admin-table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>டிராக்கிங் எண்</th>
+
+                <th>பெயர்</th>
+
+                <th>பிரச்சினை வகை</th>
+
+                <th>இடம்</th>
+
+                <th>செயல்</th>
+              </tr>
+            </thead>
+
+            <tbody id="problemReportsTableBody"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ======================================== -->
+
+      <!-- CONTACT MESSAGES -->
+
+      <!-- ======================================== -->
+
+      <section id="contactMessages">
+        <div class="section-header">
+          <h2>தொடர்பு படிவ செய்திகள்</h2>
+        </div>
+
+        <div class="admin-table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>பெயர்</th>
+
+                <th>மின்னஞ்சல்</th>
+
+                <th>பொருள்</th>
+
+                <th>தேதி</th>
+
+                <th>செயல்</th>
+              </tr>
+            </thead>
+
+            <tbody id="contactMessagesTableBody"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ======================================== -->
+
+      <!-- DONATION MANAGEMENT -->
+
+      <!-- ======================================== -->
+
+      <section id="donationManagement">
+        <div class="section-header">
+          <h2>நன்கொடை பதிவுகள்</h2>
+        </div>
+
+        <div class="admin-table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>பெயர்</th>
+                <th>மொபைல்</th>
+                <th>தொகை</th>
+                <th>தேதி</th>
+              </tr>
+            </thead>
+
+            <tbody id="donationsTableBody"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ======================================== -->
+
+      <!-- EXCEL EXPORT -->
+
+      <!-- ======================================== -->
+
+      <section id="excelExport">
+        <div class="section-header">
+          <h2>Excel Export</h2>
+        </div>
+
+        <div class="export-grid">
+          <button id="exportMembersBtn">உறுப்பினர்கள் Export</button>
+
+          <button id="exportEventRegistrationsBtn">
+            நிகழ்வு பதிவுகள் Export
+          </button>
+
+          <button id="exportBloodDonorsBtn">இரத்த தானதாரர்கள் Export</button>
+
+          <button id="exportBloodRequestsBtn">இரத்த கோரிக்கைகள் Export</button>
+
+          <button id="exportDonationsBtn">நன்கொடைகள் Export</button>
+
+          <button id="exportProblemsBtn">பிரச்சினை பதிவுகள் Export</button>
+        </div>
+      </section>
+
+      <!-- ======================================== -->
+
+      <!-- ADMIN SETTINGS -->
+
+      <!-- ======================================== -->
+
+      <section id="adminSettings">
+        <div class="section-header">
+          <h2>நிர்வாக அமைப்புகள்</h2>
+        </div>
+
+        <div class="settings-box">
+          <div class="homepage-stats-box" id="paymentSettings">
+            <h2>நன்கொடை அமைப்புகள்</h2>
+
+            <div class="form-group" style="margin-bottom: 15px;">
+              <label for="upiInput" style="display: block; margin-bottom: 5px; font-weight: bold;">UPI ID (நன்கொடை UPI முகவரி)</label>
+              <input id="upiInput" type="text" placeholder="example@upi" style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: var(--radius-sm);" />
+            </div>
+
+            <div class="form-group" style="margin-bottom: 15px;">
+              <label style="display: block; margin-bottom: 5px; font-weight: bold;">QR குறியீடு (QR Code)</label>
+              <img id="currentQrPreview" src="" alt="QR" style="display: none; max-width: 150px; margin-bottom: 10px; border: 1px solid #ddd; padding: 5px; border-radius: var(--radius-sm);" />
+              <input id="qrUpload" type="file" accept="image/*" />
+            </div>
+
+            <button id="savePaymentSettingsBtn">சேமி</button>
+          </div>
+
+          <div class="homepage-stats-box">
+            <h2>முகப்பு புள்ளிவிவரங்கள்</h2>
+            
+            <div class="form-group" style="margin-bottom: 15px;">
+              <label for="familiesCount" style="display: block; margin-bottom: 5px; font-weight: bold;">உதவிய குடும்பங்கள் (Helped Families)</label>
+              <input
+                id="familiesCount"
+                type="number"
+                placeholder="உதவிய குடும்பங்கள்"
+                style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: var(--radius-sm);"
+              />
+            </div>
+
+            <div class="form-group" style="margin-bottom: 15px;">
+              <label for="studentsCount" style="display: block; margin-bottom: 5px; font-weight: bold;">பயன்பெற்ற மாணவர்கள் (Benefited Students)</label>
+              <input
+                id="studentsCount"
+                type="number"
+                placeholder="மாணவர்கள்"
+                style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: var(--radius-sm);"
+              />
+            </div>
+
+            <div class="form-group" style="margin-bottom: 15px;">
+              <label for="issuesSolvedCount" style="display: block; margin-bottom: 5px; font-weight: bold;">தீர்க்கப்பட்ட பிரச்சினைகள் (Solved Issues)</label>
+              <input
+                id="issuesSolvedCount"
+                type="number"
+                placeholder="பிரச்சினைகள்"
+                style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: var(--radius-sm);"
+              />
+            </div>
+
+            <div class="form-group" style="margin-bottom: 15px;">
+              <label for="eventsCount" style="display: block; margin-bottom: 5px; font-weight: bold;">நடத்தப்பட்ட நிகழ்வுகள் (Conducted Events)</label>
+              <input
+                id="eventsCount"
+                type="number"
+                placeholder="நிகழ்வுகள்"
+                style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: var(--radius-sm);"
+              />
+            </div>
+
+            <button id="saveHomepageStatsBtn">சேமி</button>
+          </div>
+
+          <div class="homepage-stats-box">
+            <h2>அடையாள அட்டை & நிகழ்வு அமைப்புகள்</h2>
+
+            <div class="form-group" style="margin-bottom: 15px">
+              <label
+                style="display: block; margin-bottom: 5px; font-weight: bold"
+                >நிறுவனர் கையொப்பம்</label
+              >
+              <img
+                id="currentSignaturePreview"
+                src=""
+                alt="Signature Preview"
+                style="
+                  display: none;
+                  max-width: 150px;
+                  margin-bottom: 10px;
+                  border: 1px solid #ddd;
+                  padding: 5px;
+                  border-radius: var(--radius-sm);
+                "
+              />
+              <input id="signatureUpload" type="file" accept="image/*" />
+            </div>
+
+            <div class="form-group" style="margin-bottom: 15px">
+              <label
+                style="display: block; margin-bottom: 5px; font-weight: bold"
+                >உறுப்பினர் இயல்புநிலை புகைப்படம்</label
+              >
+              <img
+                id="currentDefaultPhotoPreview"
+                src=""
+                alt="Default Photo Preview"
+                style="
+                  display: none;
+                  max-width: 100px;
+                  margin-bottom: 10px;
+                  border: 1px solid #ddd;
+                  padding: 5px;
+                  border-radius: var(--radius-sm);
+                "
+              />
+              <input id="defaultPhotoUpload" type="file" accept="image/*" />
+            </div>
+
+            <button id="saveAssetSettingsBtn">சேமி</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================================== -->
+
+      <!-- DASHBOARD FOOTER -->
+
+      <!-- ======================================== -->
+
+      <footer class="admin-footer">
+        <p>தாமரை அறக்கட்டளை தொண்டு நிறுவனம் நிர்வாக கட்டுப்பாட்டு மையம்</p>
+
+        <p>© 2025 அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை</p>
+      </footer>
+    </main>
+
+    <!-- ======================================== -->
+    <!-- ADD EVENT MODAL (DASHBOARD ONLY)         -->
+    <!-- ======================================== -->
+    <div id="addEventModal" class="admin-modal" style="display: none">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>புதிய நிகழ்வு உருவாக்கு</h2>
+          <span class="close-modal">&times;</span>
+        </div>
+        <form id="addEventForm" class="modal-form">
+          <div class="form-group">
+            <label for="eventTitle">நிகழ்வு பெயர்</label>
+            <input
+              type="text"
+              id="eventTitle"
+              required
+              placeholder="நிகழ்வின் தலைப்பு"
+            />
+          </div>
+          <div class="form-group">
+            <label for="eventDate">தேதி</label>
+            <input type="date" id="eventDate" required />
+          </div>
+          <div class="form-group">
+            <label for="eventLocation">இடம்</label>
+            <input
+              type="text"
+              id="eventLocation"
+              required
+              placeholder="நிகழ்வு நடைபெறும் இடம்"
+            />
+          </div>
+          <div class="form-group">
+            <label for="eventDescription">விளக்கம்</label>
+            <textarea
+              id="eventDescription"
+              rows="3"
+              placeholder="நிகழ்வு பற்றிய விவரங்கள்"
+            ></textarea>
+          </div>
+          <div class="form-group">
+            <label for="eventPhoto">புகைப்படம்</label>
+            <input type="file" id="eventPhoto" accept="image/*" required />
+            <div
+              id="eventPhotoPreviewContainer"
+              style="display: none; margin-top: 10px"
+            >
+              <img
+                id="eventPhotoPreview"
+                src=""
+                alt="Preview"
+                style="
+                  max-width: 100%;
+                  max-height: 150px;
+                  border-radius: var(--radius-sm);
+                  border: 1px solid var(--border-color);
+                  object-fit: cover;
+                "
+              />
+            </div>
+          </div>
+          <div class="modal-actions">
+            <button type="button" id="cancelEventBtn" class="btn-cancel">
+              ரத்து செய்
+            </button>
+            <button type="submit" class="btn-submit">உருவாக்கு</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- ======================================== -->
+    <!-- DETAIL VIEW MODAL                        -->
+    <!-- ======================================== -->
+    <div id="detailModal" class="admin-modal" style="display: none">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 id="detailModalTitle">விவரங்கள் (Details)</h2>
+          <span class="close-modal" id="closeDetailModalBtn">&times;</span>
+        </div>
+        <div class="modal-form" id="detailModalBody" style="max-height: 70vh; overflow-y: auto;">
+          <!-- Dynamically populated details rows will go here -->
+        </div>
+      </div>
+
+    <!-- ======================================== -->
+
+    <!-- DASHBOARD SCRIPTS PLACEHOLDER -->
+
+    <!-- ======================================== -->
+
+    <script type="module" src="js/pages/admin-dashboard.js"></script>
+  </body>
+</html>
