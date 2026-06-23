@@ -835,6 +835,17 @@ async function loadApprovedMembers() {
 
                     <td>
                         <button
+                            class="download-id-card"
+                            data-id="${member.id}"
+                            data-membernumber="${member.memberNumber || ''}"
+                            title="உறுப்பினர் அடையாள அட்டை பதிவிறக்கம்"
+                        >
+                            ⬇ அட்டை
+                        </button>
+                    </td>
+
+                    <td>
+                        <button
                             class="view-member"
                             data-id="${member.id}"
                             style="background-color: var(--primary); color: white; border: none; padding: 4px 8px; border-radius: var(--radius-sm); cursor: pointer;"
@@ -856,6 +867,7 @@ async function loadApprovedMembers() {
         ).join("");
 
     bindMemberButtons();
+    bindDownloadIdCardButtons();
 }
 
 function bindMemberButtons() {
@@ -967,6 +979,24 @@ function bindMemberButtons() {
 
         });
 
+}
+
+// ========================================
+// DOWNLOAD ID CARD
+// ========================================
+
+function bindDownloadIdCardButtons() {
+    document.querySelectorAll(".download-id-card").forEach(button => {
+        button.addEventListener("click", () => {
+            const memberId = button.dataset.id;
+            if (!memberId) return;
+            const url = `id-card-template.html?memberId=${encodeURIComponent(memberId)}`;
+            const win = window.open(url, "_blank", "width=900,height=700,scrollbars=yes");
+            if (!win) {
+                showError("பதிவிறக்கம் திறக்க முடியவில்லை. Pop-up அனுமதிக்கவும்.");
+            }
+        });
+    });
 }
 
 function getPathFromUrl(url) {
