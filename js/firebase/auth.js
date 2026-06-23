@@ -11,9 +11,8 @@ import {
     sendPasswordResetEmail,
     onAuthStateChanged,
     signOut,
-    sendSignInLinkToEmail,
-    isSignInWithEmailLink,
-    signInWithEmailLink
+    signInWithPopup,
+    GoogleAuthProvider
 } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-auth.js";
 
 import {
@@ -26,10 +25,33 @@ const ADMINS_COLLECTION = "admins";
 const LOGIN_HISTORY_COLLECTION = "loginHistory";
 
 // ========================================
+// GOOGLE PROVIDER
+// ========================================
+const googleProvider = new GoogleAuthProvider();
+googleProvider.setCustomParameters({ prompt: "select_account" });
+
+// ========================================
 // WATCH AUTH STATE
 // ========================================
 export function watchAuth(callback) {
     return onAuthStateChanged(auth, callback);
+}
+
+// ========================================
+// GOOGLE SIGN-IN (for login pages)
+// ========================================
+export async function signInWithGoogle() {
+    const result = await signInWithPopup(auth, googleProvider);
+    return result.user;
+}
+
+// ========================================
+// GOOGLE SIGN-IN FOR VERIFICATION (registration page)
+// Returns the verified Google user without persisting a full session
+// ========================================
+export async function signInWithGoogleForVerification() {
+    const result = await signInWithPopup(auth, googleProvider);
+    return result.user;
 }
 
 // ========================================
@@ -78,27 +100,6 @@ export async function sendVerification(user) {
         await sendEmailVerification(user);
     }
 }
-
-// ========================================
-// PASSWORDLESS / MAGIC LINK SIGN-IN HELPERS
-// ========================================
-export function isLoginLink(url) {
-    return isSignInWithEmailLink(auth, url);
-}
-
-export async function sendLoginLink(email, redirectUrl) {
-    const actionCodeSettings = {
-        url: redirectUrl,
-        handleCodeInApp: true
-    };
-    await sendSignInLinkToEmail(auth, email, actionCodeSettings);
-}
-
-export async function verifyLoginLink(email, emailLink) {
-    const result = await signInWithEmailLink(auth, email, emailLink);
-    return result.user;
-}
-
 
 // ========================================
 // CHECK ADMIN ROLE
