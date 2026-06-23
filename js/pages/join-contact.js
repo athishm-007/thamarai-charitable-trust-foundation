@@ -4,11 +4,7 @@
 
 import {
 
-    registerMember,
-
-    signInWithGoogleForVerification,
-
-    logout
+    signInWithGoogleForVerification
 
 }
     from "../firebase/auth.js";
@@ -53,10 +49,6 @@ import {
     isValidEmail,
 
     isValidMobile,
-
-    isStrongPassword,
-
-    passwordsMatch,
 
     validateMemberPhoto,
 
@@ -189,8 +181,9 @@ if (
     const memberEmailInput = document.getElementById("memberEmailInput");
     const membershipSubmitBtn = document.getElementById("membershipSubmitBtn");
 
-    // Track Google-verified email
+    // Track Google-verified user (stays signed in for registration)
     window._googleVerifiedEmail = null;
+    window._googleUser = null;
 
     if (googleVerifyBtn) {
         googleVerifyBtn.addEventListener("click", async () => {
@@ -198,13 +191,11 @@ if (
             googleVerifyBtn.style.opacity = "0.7";
 
             try {
-                // Sign in with Google to verify the account
+                // Sign in with Google — user stays signed in for registration
                 const user = await signInWithGoogleForVerification();
 
-                // Immediately sign out to not persist a session on registration page
-                await logout();
-
-                // Store verified email
+                // Store user and email for use during form submission
+                window._googleUser = user;
                 window._googleVerifiedEmail = user.email;
 
                 // Auto-fill email input
@@ -264,6 +255,7 @@ if (
         memberEmailInput.addEventListener("input", () => {
             if (!memberEmailInput.readOnly) {
                 window._googleVerifiedEmail = null;
+                window._googleUser = null;
                 if (membershipSubmitBtn) {
                     membershipSubmitBtn.disabled = true;
                     membershipSubmitBtn.classList.remove("btn-enabled");
@@ -486,7 +478,7 @@ async function handleMembershipSubmit(
         // GOOGLE VERIFICATION CHECK
         // ====================================
 
-        if (!window._googleVerifiedEmail) {
+        if (!window._googleUser || !window._googleVerifiedEmail) {
             const googleVerifyStatus = document.getElementById("googleVerifyStatus");
             if (googleVerifyStatus) {
                 googleVerifyStatus.style.display = "flex";
@@ -529,15 +521,6 @@ async function handleMembershipSubmit(
                 "email"
             )?.trim();
 
-        const password =
-            formData.get(
-                "password"
-            );
-
-        const confirmPassword =
-            formData.get(
-                "confirmPassword"
-            );
 
         const address =
             formData.get(
@@ -602,10 +585,6 @@ async function handleMembershipSubmit(
 
                 email,
 
-                password,
-
-                confirmPassword,
-
                 address,
 
                 dob,
@@ -654,33 +633,6 @@ async function handleMembershipSubmit(
             );
         }
 
-        if (
-            !isStrongPassword(
-                password
-            )
-        ) {
-            throw new Error(
-
-                "கடவுச்சொல் பாதுகாப்பாக இல்லை"
-
-            );
-        }
-
-        if (
-            !passwordsMatch(
-
-                password,
-
-                confirmPassword
-
-            )
-        ) {
-            throw new Error(
-
-                "கடவுச்சொற்கள் பொருந்தவில்லை"
-
-            );
-        }
 
         if (
             !isAdult(
@@ -719,34 +671,14 @@ async function handleMembershipSubmit(
         }
 
         // ====================================
-        // AUTH ACCOUNT
+        // USE GOOGLE-VERIFIED USER
         // ====================================
 
-        let user = null;
+        // The user was signed in with Google during email verification
+        const user = window._googleUser;
 
-        try {
-
-            user =
-
-                await registerMember({
-
-                    fullName,
-
-                    email,
-
-                    password
-
-                });
-
-        }
-        catch (error) {
-
-            throw new Error(
-
-                "உறுப்பினர் கணக்கை உருவாக்க முடியவில்லை"
-
-            );
-
+        if (!user) {
+            throw new Error("Google கணக்கு தகவல் கிடைக்கவில்லை. மீண்டும் Google மூலம் சரிபார்க்கவும்.");
         }
 
         // ====================================
@@ -868,9 +800,13 @@ async function handleMembershipSubmit(
 
             showSuccess(
 
-                "பதிவு வெற்றிகரமாக முடிந்தது. உங்கள் மின்னஞ்சலை சரிபார்க்கவும்."
+                "பதிவு வெற்றிகரமாக முடிந்தது. நிர்வாகி ஒப்புதலுக்காக காத்திருக்கவும்."
 
             );
+
+            // Reset Google verification state
+            window._googleUser = null;
+            window._googleVerifiedEmail = null;
 
             membershipForm.reset();
 
