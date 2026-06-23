@@ -4,7 +4,11 @@
 
 import {
 
-    registerMember
+    registerMember,
+
+    signInWithGoogleForVerification,
+
+    logout
 
 }
     from "../firebase/auth.js";
@@ -173,6 +177,101 @@ if (
             govProofError.textContent = "✅ ஆவணம் சரியாக உள்ளது.";
             govProofError.style.display = "block";
             govProofError.style.color = "#16a34a";
+        });
+    }
+
+    // ====================================
+    // GOOGLE VERIFICATION FOR EMAIL
+    // ====================================
+
+    const googleVerifyBtn = document.getElementById("googleVerifyBtn");
+    const googleVerifyStatus = document.getElementById("googleVerifyStatus");
+    const memberEmailInput = document.getElementById("memberEmailInput");
+    const membershipSubmitBtn = document.getElementById("membershipSubmitBtn");
+
+    // Track Google-verified email
+    window._googleVerifiedEmail = null;
+
+    if (googleVerifyBtn) {
+        googleVerifyBtn.addEventListener("click", async () => {
+            googleVerifyBtn.disabled = true;
+            googleVerifyBtn.style.opacity = "0.7";
+
+            try {
+                // Sign in with Google to verify the account
+                const user = await signInWithGoogleForVerification();
+
+                // Immediately sign out to not persist a session on registration page
+                await logout();
+
+                // Store verified email
+                window._googleVerifiedEmail = user.email;
+
+                // Auto-fill email input
+                if (memberEmailInput) {
+                    memberEmailInput.value = user.email;
+                    memberEmailInput.readOnly = true;
+                }
+
+                // Enable submit button
+                if (membershipSubmitBtn) {
+                    membershipSubmitBtn.disabled = false;
+                    membershipSubmitBtn.classList.add("btn-enabled");
+                }
+
+                // Show success status
+                if (googleVerifyStatus) {
+                    googleVerifyStatus.style.display = "flex";
+                    googleVerifyStatus.className = "google-verify-status google-verify-success";
+                    googleVerifyStatus.innerHTML = `✅ மின்னஞ்சல் சரிபார்க்கப்பட்டது: <strong style="margin-left:4px;">${user.email}</strong>`;
+                }
+
+                // Update button to show verified state
+                googleVerifyBtn.innerHTML = `
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 48 48" style="vertical-align:middle;margin-right:8px;">
+                        <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/>
+                        <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/>
+                        <path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/>
+                        <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/>
+                        <path fill="none" d="M0 0h48v48H0z"/>
+                    </svg>
+                    ✅ சரிபார்க்கப்பட்டது — மாற்றம் செய்யவும்
+                `;
+                googleVerifyBtn.style.opacity = "1";
+                googleVerifyBtn.disabled = false;
+                googleVerifyBtn.classList.add("google-verify-btn--verified");
+
+            } catch (error) {
+                googleVerifyBtn.disabled = false;
+                googleVerifyBtn.style.opacity = "1";
+
+                // User cancelled — no error shown
+                if (error.code === "auth/popup-closed-by-user" || error.code === "auth/cancelled-popup-request") {
+                    return;
+                }
+
+                if (googleVerifyStatus) {
+                    googleVerifyStatus.style.display = "flex";
+                    googleVerifyStatus.className = "google-verify-status google-verify-error";
+                    googleVerifyStatus.textContent = "❌ Google சரிபார்ப்பு தோல்வி. மீண்டும் முயற்சிக்கவும்.";
+                }
+            }
+        });
+    }
+
+    // Reset verification if the email input changes manually
+    if (memberEmailInput) {
+        memberEmailInput.addEventListener("input", () => {
+            if (!memberEmailInput.readOnly) {
+                window._googleVerifiedEmail = null;
+                if (membershipSubmitBtn) {
+                    membershipSubmitBtn.disabled = true;
+                    membershipSubmitBtn.classList.remove("btn-enabled");
+                }
+                if (googleVerifyStatus) {
+                    googleVerifyStatus.style.display = "none";
+                }
+            }
         });
     }
 }
@@ -383,11 +482,32 @@ async function handleMembershipSubmit(
 
     try {
 
+        // ====================================
+        // GOOGLE VERIFICATION CHECK
+        // ====================================
+
+        if (!window._googleVerifiedEmail) {
+            const googleVerifyStatus = document.getElementById("googleVerifyStatus");
+            if (googleVerifyStatus) {
+                googleVerifyStatus.style.display = "flex";
+                googleVerifyStatus.className = "google-verify-status google-verify-error";
+                googleVerifyStatus.textContent = "❌ விண்ணப்பத்தை சமர்ப்பிக்க முன்பு Google மூலம் உங்கள் மின்னஞ்சலை சரிபார்க்கவும்.";
+                googleVerifyStatus.scrollIntoView({ behavior: "smooth", block: "center" });
+            }
+            showError("Google மூலம் மின்னஞ்சலை சரிபார்க்காமல் விண்ணப்பம் சமர்ப்பிக்க முடியாது.");
+            if (submitBtn) {
+                submitBtn.disabled = false;
+                submitBtn.textContent = originalBtnText;
+            }
+            return;
+        }
+
         const formData =
 
             new FormData(
                 membershipForm
             );
+
 
         const fullName =
             formData.get(
