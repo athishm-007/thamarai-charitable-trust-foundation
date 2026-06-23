@@ -1969,7 +1969,6 @@ form {
 input[type="text"],
 input[type="tel"],
 input[type="email"],
-input[type="password"],
 input[type="date"],
 input[type="number"],
 select,
@@ -2364,15 +2363,6 @@ button[type="submit"].btn-enabled {
   font-weight: 600;
 }
 
-.forgot-password {
-  text-align: right;
-  margin-top: 15px;
-  font-size: 0.9rem;
-}
-
-.forgot-password a {
-  color: var(--primary-dark);
-}
 
 /* Member status boxes */
 .status-box,
