@@ -2219,7 +2219,139 @@ input[type="checkbox"] {
 
 .login-container h2 {
   text-align: center;
-  margin-bottom: 25px;
+  margin-bottom: 10px;
+}
+
+/* Login subtitle description text */
+.login-subtitle {
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.92rem;
+  margin-bottom: 24px;
+  line-height: 1.6;
+}
+
+/* ==========================================
+   GOOGLE SIGN-IN BUTTON (Login Pages)
+   ========================================== */
+.google-signin-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 13px 20px;
+  background-color: #ffffff;
+  color: #3c4043;
+  border: 1.5px solid #dadce0;
+  border-radius: 8px;
+  font-family: var(--font-main);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  gap: 0;
+  margin-top: 8px;
+}
+
+.google-signin-btn:hover {
+  background-color: #f7f8f8;
+  border-color: #c6c9cc;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.13);
+}
+
+.google-signin-btn:active {
+  background-color: #eff1f3;
+}
+
+.google-signin-btn:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+/* ==========================================
+   GOOGLE VERIFY BUTTON (Registration Page)
+   ========================================== */
+.google-verify-container {
+  margin-top: 12px;
+}
+
+.google-verify-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 18px;
+  background-color: #ffffff;
+  color: #3c4043;
+  border: 1.5px solid #dadce0;
+  border-radius: 7px;
+  font-family: var(--font-main);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  width: 100%;
+  justify-content: center;
+}
+
+.google-verify-btn:hover {
+  background-color: #f7f8f8;
+  border-color: #c6c9cc;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+}
+
+.google-verify-btn:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.google-verify-btn--verified {
+  border-color: #34a853;
+  background-color: #f0fdf4;
+  color: #166534;
+}
+
+.google-verify-btn--verified:hover {
+  background-color: #dcfce7;
+  border-color: #16a34a;
+}
+
+/* Verification status messages */
+.google-verify-status {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 10px;
+  padding: 10px 14px;
+  border-radius: 6px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.google-verify-success {
+  background-color: #f0fdf4;
+  color: #166534;
+  border: 1px solid #86efac;
+}
+
+.google-verify-error {
+  background-color: #fef2f2;
+  color: #991b1b;
+  border: 1px solid #fca5a5;
+}
+
+/* Disabled submit button look */
+button[type="submit"]:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  filter: grayscale(0.3);
+}
+
+button[type="submit"].btn-enabled {
+  opacity: 1;
+  cursor: pointer;
+  filter: none;
 }
 
 .error-message {
