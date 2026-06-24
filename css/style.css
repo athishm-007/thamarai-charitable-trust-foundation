@@ -2499,14 +2499,15 @@ button[type="submit"].btn-enabled {
   box-sizing: border-box;
   background: linear-gradient(135deg, #ffffff 0%, #fffdf9 100%);
   width: 320px !important;
-  height: 507px !important;
+  min-height: 507px !important;
+  height: auto !important;
   border: 3px double var(--primary);
   border-radius: 8px !important;
   box-shadow: var(--shadow-lg);
   padding: 8px 12px 12px 12px !important;
   position: relative;
   font-family: var(--font-main);
-  overflow: hidden;
+  overflow: visible;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -2631,13 +2632,7 @@ button[type="submit"].btn-enabled {
   width: 100%;
   box-shadow: none;
   background: transparent;
-  margin-bottom: 0;
-}
-
-.member-details .spacer-row td {
-  padding-top: 4px !important;
-  padding-bottom: 0 !important;
-  height: 6px;
+  margin-bottom: 8px;
 }
 
 .member-details td {
