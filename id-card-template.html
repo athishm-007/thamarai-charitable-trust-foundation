@@ -6,7 +6,726 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <meta<!doctype html>
+
+<html lang="ta">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <meta
+      name="description"
+      content="தாமரை தொண்டு நிறுவன அறக்கட்டளையின் அதிகாரப்பூர்வ உறுப்பினர் அடையாள அட்டை."
+    />
+
+    <title>உறுப்பினர் அடையாள அட்டை | தாமரை தொண்டு நிறுவன அறக்கட்டளை</title>
+
+    <link rel="icon" type="image/jpg" href="images/logo.jpg" />
+
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+  </head>
+
+  <body>
+    <!-- ======================================== -->
+
+    <!-- ID CARD PAGE HEADER -->
+
+    <!-- ======================================== -->
+
+    <header class="main-header">
+      <div class="logo-area">
+        <div class="logo-branding">
+          <img src="images/logo.jpg" alt="Trust Logo" loading="lazy" />
+          <h2>தாமரை தொண்டு நிறுவன அறக்கட்டளை</h2>
+        </div>
+
+        <div class="header-actions">
+          <div id="logoutNavLi">
+            <a href="#" id="logoutBtn" class="logout-btn">வெளியேறு</a>
+          </div>
+          <button class="menu-toggle-btn" aria-label="Toggle Menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </button>
+        </div>
+      </div>
+
+      <nav class="main-nav">
+        <ul>
+          <li class="has-dropdown">
+            <div class="nav-item-wrapper">
+              <a href="index.html">முகப்பு</a>
+              <button class="dropdown-toggle" aria-label="Toggle Dropdown">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="12"
+                  height="12"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="3"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="arrow-icon"
+                >
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </button>
+            </div>
+            <ul class="dropdown-menu">
+              <li><a href="index.html#founder">நிறுவனர்</a></li>
+              <li><a href="index.html#about">எங்களை பற்றி</a></li>
+              <li><a href="index.html#services">எங்கள் சேவைகள்</a></li>
+              <li><a href="index.html#events">வரவிருக்கும் நிகழ்வுகள்</a></li>
+              <li><a href="index.html#impact">எங்கள் தாக்கம்</a></li>
+              <li><a href="index.html#gallery">காட்சியகம்</a></li>
+              <li><a href="index.html#recognition">அங்கீகாரங்கள்</a></li>
+            </ul>
+          </li>
+
+          <li class="has-dropdown">
+            <div class="nav-item-wrapper">
+              <a href="blood-donation.html">இரத்த தானம்</a>
+              <button class="dropdown-toggle" aria-label="Toggle Dropdown">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="12"
+                  height="12"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="3"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="arrow-icon"
+                >
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </button>
+            </div>
+            <ul class="dropdown-menu">
+              <li>
+                <a href="blood-donation.html#importance"
+                  >இரத்த தானத்தின் முக்கியத்துவம்</a
+                >
+              </li>
+              <li>
+                <a href="blood-donation.html#donor-form">கொடையாளர் படிவம்</a>
+              </li>
+              <li>
+                <a href="blood-donation.html#faq"
+                  >அடிக்கடி கேட்கப்படும் கேள்விகள்</a
+                >
+              </li>
+              <li>
+                <a href="blood-donation.html#emergency-contact">அவசர தொடர்பு</a>
+              </li>
+            </ul>
+          </li>
+
+          <li class="has-dropdown">
+            <div class="nav-item-wrapper">
+              <a href="blood-request.html">இரத்தம் தேவை</a>
+              <button class="dropdown-toggle" aria-label="Toggle Dropdown">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="12"
+                  height="12"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="3"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="arrow-icon"
+                >
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </button>
+            </div>
+            <ul class="dropdown-menu">
+              <li><a href="blood-request.html#emergency">அவசர தேவை</a></li>
+              <li>
+                <a href="blood-request.html#request-form"
+                  >இரத்தம் தேவை படிவம்</a
+                >
+              </li>
+              <li>
+                <a href="blood-request.html#faq"
+                  >அடிக்கடி கேட்கப்படும் கேள்விகள்</a
+                >
+              </li>
+            </ul>
+          </li>
+
+          <li class="has-dropdown">
+            <div class="nav-item-wrapper">
+              <a href="donate.html">நன்கொடை</a>
+              <button class="dropdown-toggle" aria-label="Toggle Dropdown">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="12"
+                  height="12"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="3"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="arrow-icon"
+                >
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </button>
+            </div>
+            <ul class="dropdown-menu">
+              <li>
+                <a href="donate.html#donation-purpose">நன்கொடையின் நோக்கம்</a>
+              </li>
+              <li><a href="donate.html#qr-section">கியூஆர் குறியீடு</a></li>
+              <li>
+                <a href="donate.html#faq">அடிக்கடி கேட்கப்படும் கேள்விகள்</a>
+              </li>
+            </ul>
+          </li>
+
+          <li class="has-dropdown">
+            <div class="nav-item-wrapper">
+              <a href="events.html">நிகழ்வுகள்</a>
+              <button class="dropdown-toggle" aria-label="Toggle Dropdown">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="12"
+                  height="12"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="3"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="arrow-icon"
+                >
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </button>
+            </div>
+            <ul class="dropdown-menu">
+              <li>
+                <a href="events.html#upcoming-events"
+                  >வரவிருக்கும் நிகழ்வுகள்</a
+                >
+              </li>
+              <li>
+                <a href="events.html#event-registration">நிகழ்வு பதிவு</a>
+              </li>
+              <li>
+                <a href="events.html#event-faq"
+                  >அடிக்கடி கேட்கப்படும் கேள்விகள்</a
+                >
+              </li>
+            </ul>
+          </li>
+
+          <li class="has-dropdown">
+            <div class="nav-item-wrapper">
+              <a href="join-contact.html">தொடர்பு & பதிவு</a>
+              <button class="dropdown-toggle" aria-label="Toggle Dropdown">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="12"
+                  height="12"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="3"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="arrow-icon"
+                >
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </button>
+            </div>
+            <ul class="dropdown-menu">
+              <li>
+                <a href="join-contact.html#membership">உறுப்பினர் பதிவு</a>
+              </li>
+              <li>
+                <a href="join-contact.html#problem-report"
+                  >பொதுப் பிரச்சினை தீர்வு</a
+                >
+              </li>
+              <li>
+                <a href="join-contact.html#feedback">கருத்து / தொடர்பு</a>
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            <div class="nav-item-wrapper">
+              <a href="member-login.html">உறுப்பினர் உள்நுழைவு</a>
+            </div>
+          </li>
+
+          <li>
+            <div class="nav-item-wrapper">
+              <a href="admin-login.html">நிர்வாகி உள்நுழைவு</a>
+            </div>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- ======================================== -->
+
+    <!-- VALID MEMBER NOTICE -->
+
+    <!-- ======================================== -->
+
+    <section id="validStatusSection" style="display: none">
+      <div class="valid-status">
+        ✅ இந்த உறுப்பினர் அடையாள அட்டை செல்லுபடியாகும்.
+      </div>
+    </section>
+
+    <!-- ======================================== -->
+
+    <!-- MEMBER ID CARD -->
+
+    <!-- ======================================== -->
+
+    <!-- WELCOME BANNER FROM FOUNDER -->
+    <section class="dashboard-welcome-section" style="display: none">
+      <div class="dashboard-welcome-card">
+        <img src="images/founder-1.jpg" alt="Founder Photo" class="dashboard-founder-avatar" />
+        <div class="dashboard-welcome-text">
+          <h3>உங்களை அன்போடு வரவேற்கிறோம்! / Warm Welcome!</h3>
+          <p>"தாமரை தொண்டு நிறுவன அறக்கட்டளையின் குடும்பத்தில் ஒருவராக இணைந்தமைக்கு எனது மனமார்ந்த வாழ்த்துக்கள். நமது தொண்டுப் பயணம் தொடரட்டும்."</p>
+          <span>- <strong>Dr. பிரகதீஸ்வரன் நாகராஜன்</strong>, நிறுவனர் & தலைவர்</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="idCardPage" class="id-card-page" style="display: none">
+      <div class="member-id-card">
+        <!-- TOP SECTION -->
+
+        <div class="card-header">
+          <div class="header-photos">
+            <img src="images/founder-1.jpg" alt="Founder Photo" class="founder-photo-circle" />
+            <img src="images/logo.jpg" alt="Trust Logo" class="trust-logo" />
+            <img src="images/leader.jpg" alt="Leader Photo" class="leader-photo-circle" />
+          </div>
+
+          <h1>தாமரை தொண்டு நிறுவன அறக்கட்டளை</h1>
+
+          <h2>உறுப்பினர் அடையாள அட்டை</h2>
+        </div>
+
+        <!-- MEMBER PHOTO -->
+
+        <div class="member-photo">
+          <img id="memberPhoto" src="" alt="Member Photo" loading="lazy" />
+        </div>
+
+        <!-- MEMBER DETAILS -->
+
+        <div class="member-details">
+          <table>
+            <tr>
+              <td>உறுப்பினர் பெயர்</td>
+
+              <td id="memberName"></td>
+            </tr>
+
+            <tr>
+              <td>தந்தையின் பெயர்</td>
+
+              <td id="memberFatherName"></td>
+            </tr>
+
+            <tr>
+              <td>பிறந்த தேதி</td>
+
+              <td id="memberDob"></td>
+            </tr>
+
+            <tr>
+              <td>உறுப்பினர் எண்</td>
+
+              <td id="memberNumber"></td>
+            </tr>
+
+            <tr>
+              <td>உறுப்பினர் வகை</td>
+
+              <td id="memberType"></td>
+            </tr>
+
+            <tr>
+              <td>இரத்த வகை</td>
+
+              <td id="memberBloodGroup"></td>
+            </tr>
+
+            <tr>
+              <td>மொபைல் எண்</td>
+
+              <td id="memberMobile"></td>
+            </tr>
+
+            <tr>
+              <td>மின்னஞ்சல்</td>
+
+              <td id="memberEmail"></td>
+            </tr>
+
+            <tr>
+              <td>முகவரி</td>
+
+              <td id="memberAddress"></td>
+            </tr>
+
+            <tr>
+              <td>வழங்கப்பட்ட தேதி</td>
+
+              <td id="memberIssueDate"></td>
+            </tr>
+
+            <tr class="spacer-row">
+              <td colspan="2"></td>
+            </tr>
+          </table>
+        </div>
+
+        <!-- FOUNDER SIGNATURE -->
+
+        <div class="signature-section">
+          <img
+            id="founderSignature"
+            src=""
+            alt="Founder Signature"
+            loading="lazy"
+          />
+
+          <p>பிரகதீஸ்வரன் நாகராஜன்</p>
+
+          <span> நிறுவனர் </span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================== -->
+
+    <!-- DOWNLOAD SECTION -->
+
+    <!-- ======================================== -->
+
+    <section>
+      <div class="download-section" style="display: none">
+        <h2>அடையாள அட்டை பதிவிறக்கம்</h2>
+
+        <p>PDF வடிவில் உங்கள் அடையாள அட்டையை பதிவிறக்கம் செய்யலாம்.</p>
+
+        <button id="downloadPdfBtn">PDF பதிவிறக்கவும்</button>
+      </div>
+    </section>
+
+    <!-- ======================================== -->
+
+    <!-- INVALID MEMBER STATUS -->
+
+    <!-- ======================================== -->
+
+    <section id="invalidStatusSection" style="display: none">
+      <div class="invalid-status">
+        ❌ இந்த உறுப்பினர் அடையாள அட்டை செல்லுபடியாகாது.
+
+        <br /><br />
+
+        காரணம்: உறுப்பினர் கணக்கு செயலிழக்கச் செய்யப்பட்டுள்ளது.
+      </div>
+    </section>
+
+    <!-- ======================================== -->
+
+    <!-- ID CARD SECURITY -->
+
+    <!-- ======================================== -->
+
+    <section>
+      <div class="security-box">
+        <h2>பாதுகாப்பு தகவல்</h2>
+
+        <ul>
+          <li>உறுப்பினர் எண் தனித்துவமானது</li>
+
+          <li>நிர்வாகி ஒப்புதல் இல்லாமல் அட்டை உருவாக்கப்படாது</li>
+
+          <li>உறுப்பினர் நீக்கப்பட்டால் அட்டை செல்லுபடியாகாது</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ======================================== -->
+
+    <!-- MEMBER NOTICE -->
+
+    <!-- ======================================== -->
+
+    <section>
+      <div class="notice-box">
+        <strong> குறிப்பு: </strong>
+
+        இந்த அடையாள அட்டை தாமரை தொண்டு நிறுவன அறக்கட்டளையின் அதிகாரப்பூர்வ
+        உறுப்பினர்களுக்கு மட்டுமே வழங்கப்படும்.
+      </div>
+    </section>
+
+    <!-- ======================================== -->
+
+    <!-- FOOTER -->
+
+    <!-- ======================================== -->
+
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-about">
+          <img src="images/logo.jpg" alt="Trust Logo" loading="lazy" />
+
+          <h3>தாமரை தொண்டு நிறுவன அறக்கட்டளை</h3>
+
+          <p>
+            மக்களின் வாழ்வில் நீடித்த மாற்றங்களைக் கொண்டு வருவதில் நாங்கள் ஒரு
+            வினையூக்கியாகச் செயல்படுகிறோம் .
+          </p>
+          <div class="footer-founder">
+            <img src="images/founder-1.jpg" alt="Founder" class="founder-avatar-circle" loading="lazy" />
+            <p><strong>பிரகதீஸ்வரன் நாகராஜன்</strong><br>நிறுவனர்</p>
+          </div>
+        </div>
+
+        <div class="footer-contact">
+          <h3>தொடர்புக்கு</h3>
+
+          <p>
+            1992 சாலை தோட்டம், கரட்டுப்பட்டி சாலை, ரெங்கநாதபுரம்,
+            போடிநாயக்கனூர், தேனி மாவட்டம்
+          </p>
+
+          <p>
+            <a href="tel:7010353437"> 📞 7010353437 </a>
+          </p>
+
+          <p>
+            <a
+              href="mailto:lotus4helptn@gmail.com"
+              style="
+                display: inline-flex;
+                align-items: center;
+                gap: 8px;
+                color: inherit;
+                text-decoration: none;
+              "
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                style="vertical-align: middle; color: var(--primary)"
+              >
+                <rect width="20" height="16" x="2" y="4" rx="2" />
+                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+              </svg>
+              <span>lotus4helptn@gmail.com</span>
+            </a>
+          </p>
+        </div>
+
+        <div class="footer-links">
+          <h3>விரைவு இணைப்புகள்</h3>
+
+          <ul>
+            <li>
+              <a href="index.html"> முகப்பு </a>
+            </li>
+
+            <li>
+              <a href="events.html"> நிகழ்வுகள் </a>
+            </li>
+
+            <li>
+              <a href="join-contact.html"> உறுப்பினர் பதிவு </a>
+            </li>
+
+            <li>
+              <a href="member-login.html"> உறுப்பினர் உள்நுழைவு </a>
+            </li>
+
+            <li>
+              <a href="donate.html"> நன்கொடை </a>
+            </li>
+
+            <li>
+              <a href="admin-login.html"> நிர்வாகி உள்நுழைவு </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="footer-social">
+          <h3>சமூக வலைதளங்கள்</h3>
+          <ul class="social-icons">
+            <li>
+              <a
+                href="https://www.instagram.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="social-svg"
+                >
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                  <path
+                    d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"
+                  ></path>
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.facebook.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="social-svg"
+                >
+                  <path
+                    d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
+                  ></path>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.youtube.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="YouTube"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="social-svg"
+                >
+                  <path
+                    d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"
+                  ></path>
+                  <polygon
+                    points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"
+                  ></polygon>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://wa.me/917010353437"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="WhatsApp"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 16 16"
+                  fill="currentColor"
+                  class="social-svg"
+                >
+                  <path
+                    d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"
+                  ></path>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://x.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="X"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  class="social-svg"
+                >
+                  <path
+                    d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"
+                  ></path>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>
+          பதிப்புரிமை © 2025 | அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை | தாமரை தொண்டு நிறுவன அறக்கட்டளை
+        </p>
+        <span><a href="terms-of-use.html">பயன்பாட்டு விதிமுறைகள்</a></span>
+        <span><a href="privacy-policy.html">தனியுரிமைக் கொள்கை</a></span>
+      </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script type="module" src="js/navigation.js"></script>
+    <script type="module" src="js/pages/id-card-template.js"></script>
+  </body>
+</html>
       name="description"
       content="தாமரை தொண்டு நிறுவன அறக்கட்டளையின் அதிகாரப்பூர்வ உறுப்பினர் அடையாள அட்டை."
     />
