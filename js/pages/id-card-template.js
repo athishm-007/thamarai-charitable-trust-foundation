@@ -496,31 +496,19 @@ async function downloadIdCardPDF() {
         } = window.jspdf;
 
         const pdf =
-            new jsPDF(
-                "p",
-                "mm",
-                "a4"
-            );
-
-        const pdfWidth = 120;
-
-        const pdfHeight =
-            (
-                canvas.height *
-                pdfWidth
-            ) /
-            canvas.width;
-
-        const xOffset = (210 - pdfWidth) / 2;
-        const yOffset = (297 - pdfHeight) / 2;
+            new jsPDF({
+                orientation: "portrait",
+                unit: "mm",
+                format: [54, 85.6]
+            });
 
         pdf.addImage(
             imageData,
             "PNG",
-            xOffset,
-            yOffset,
-            pdfWidth,
-            pdfHeight
+            0,
+            0,
+            54,
+            85.6
         );
 
         const memberNumber =
