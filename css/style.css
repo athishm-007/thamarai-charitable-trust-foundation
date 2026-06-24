@@ -800,6 +800,30 @@ a:active {
   gap: 15px;
 }
 
+.hero-founder {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-top: 30px;
+  background: var(--bg-card);
+  padding: 12px 20px;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  display: inline-flex;
+  border-left: 4px solid var(--primary);
+}
+
+.hero-founder-info p {
+  margin-bottom: 2px;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+
+.hero-founder-info strong {
+  color: var(--primary-dark);
+  font-size: 1.05rem;
+}
+
 .hero-image {
   flex: 1;
   display: flex;
@@ -2472,17 +2496,21 @@ button[type="submit"].btn-enabled {
 }
 
 .member-id-card {
+  box-sizing: border-box;
   background: linear-gradient(135deg, #ffffff 0%, #fffdf9 100%);
-  width: 100%;
-  max-width: 380px;
+  width: 320px !important;
+  height: 507px !important;
   border: 3px double var(--primary);
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-lg);
-  padding: 24px;
+  padding: 12px 16px !important;
   position: relative;
   font-family: var(--font-main);
   overflow: hidden;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 /* Corner security design details */
@@ -2502,20 +2530,44 @@ button[type="submit"].btn-enabled {
 
 .card-header {
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 8px;
   border-bottom: 2px solid var(--primary);
-  padding-bottom: 12px;
+  padding-bottom: 6px;
 }
 
-.card-header img {
-  height: 60px;
-  width: 60px;
-  margin: 0 auto 10px auto;
-  object-fit: contain;
+.header-photos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin: 0 auto 6px auto;
+}
+
+.header-photos img.founder-photo-circle {
+  width: 42px !important;
+  height: 42px !important;
+  border-radius: 50% !important;
+  object-fit: cover !important;
+  border: 1.5px solid var(--secondary);
+}
+
+.header-photos img.trust-logo {
+  width: 55px !important;
+  height: 55px !important;
+  object-fit: contain !important;
+  border-radius: 0 !important;
+}
+
+.header-photos img.leader-photo-circle {
+  width: 30px !important;
+  height: 30px !important;
+  border-radius: 50% !important;
+  object-fit: cover !important;
+  border: 1.5px solid var(--secondary);
 }
 
 .card-header h1 {
-  font-size: 1.2rem;
+  font-size: 0.95rem;
   font-weight: 800;
   color: var(--primary-dark);
   margin-bottom: 2px;
@@ -2523,25 +2575,25 @@ button[type="submit"].btn-enabled {
 }
 
 .card-header p {
-  font-size: 0.75rem;
+  font-size: 0.65rem;
   font-weight: 700;
   color: var(--secondary-dark);
-  margin-bottom: 4px;
+  margin-bottom: 2px;
 }
 
 .card-header h2 {
-  font-size: 0.85rem;
+  font-size: 0.72rem;
   font-weight: 800;
   color: #0e0a0a;
   display: inline-block;
-  padding: 2px 14px;
+  padding: 1px 8px;
 }
 
 .member-photo {
-  width: 130px;
-  height: 150px;
-  margin: 0 auto 18px auto;
-  border: 3px solid var(--secondary);
+  width: 90px !important;
+  height: 105px !important;
+  margin: 0 auto 6px auto;
+  border: 2px solid var(--secondary);
   border-radius: var(--radius-sm);
   overflow: hidden;
   background-color: var(--bg-section);
@@ -2561,19 +2613,19 @@ button[type="submit"].btn-enabled {
   width: 100%;
   box-shadow: none;
   background: transparent;
-  margin-bottom: 15px;
+  margin-bottom: 6px;
 }
 
 .member-details td {
-  padding: 6px 4px;
+  padding: 3px 4px;
   border-bottom: 1px dashed var(--border-color);
-  font-size: 0.82rem;
+  font-size: 0.72rem;
 }
 
 .member-details td:first-child {
   font-weight: 700;
   color: var(--text-muted);
-  width: 110px;
+  width: 95px;
 }
 
 .member-details td:last-child {
@@ -6858,4 +6910,26 @@ body.lightbox-open {
   margin-bottom: 0;
 }
 
-
+/* Founder Avatar Global Styles */
+.founder-avatar-circle {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--primary);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  display: block;
+}
+.footer-founder {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-top: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 10px;
+  border-radius: 10px;
+}
+.footer-founder p {
+  margin: 0 !important;
+  line-height: 1.4;
+}
