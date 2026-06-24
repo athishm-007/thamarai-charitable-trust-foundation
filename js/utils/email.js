@@ -4,10 +4,10 @@ import { COLLECTIONS } from "./constants.js";
 // ==========================================================================
 // EMAILJS CONFIGURATION
 // ==========================================================================
-export const EMAILJS_SERVICE_ID = "service_7e5ohsi";
-export const EMAILJS_ADMIN_TEMPLATE_ID = "template_atkxjbb";
-export const EMAILJS_USER_TEMPLATE_ID = "template_2qgkorb";
-export const EMAILJS_PUBLIC_KEY = "IGOy239NcKQuLuwg0";
+export const EMAILJS_SERVICE_ID = "service_onnv3vn";
+export const EMAILJS_ADMIN_TEMPLATE_ID = "template_3m0mo0f";
+export const EMAILJS_USER_TEMPLATE_ID = "template_675gjmf";
+export const EMAILJS_PUBLIC_KEY = "Kc4Mv6f6yrlvX1FJi";
 
 // ==========================================================================
 // ADMIN FALLBACK EMAIL CONFIGURATION
