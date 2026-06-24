@@ -2631,7 +2631,13 @@ button[type="submit"].btn-enabled {
   width: 100%;
   box-shadow: none;
   background: transparent;
-  margin-bottom: 8px;
+  margin-bottom: 0;
+}
+
+.member-details .spacer-row td {
+  padding-top: 4px !important;
+  padding-bottom: 0 !important;
+  height: 6px;
 }
 
 .member-details td {
