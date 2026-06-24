@@ -6916,6 +6916,7 @@ body.lightbox-open {
   height: 80px;
   border-radius: 50%;
   object-fit: cover;
+  object-position: center top;
   border: 3px solid var(--primary);
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   display: block;
@@ -6932,4 +6933,8 @@ body.lightbox-open {
 .footer-founder p {
   margin: 0 !important;
   line-height: 1.4;
+  color: #ffffff !important;
+}
+.footer-founder strong {
+  color: #ffffff !important;
 }
