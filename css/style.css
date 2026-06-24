@@ -2501,9 +2501,9 @@ button[type="submit"].btn-enabled {
   width: 320px !important;
   height: 507px !important;
   border: 3px double var(--primary);
-  border-radius: var(--radius-md);
+  border-radius: 8px !important;
   box-shadow: var(--shadow-lg);
-  padding: 8px 14px !important;
+  padding: 8px 12px 10px 12px !important;
   position: relative;
   font-family: var(--font-main);
   overflow: hidden;
@@ -2511,7 +2511,7 @@ button[type="submit"].btn-enabled {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  gap: 4px;
+  gap: 2px;
 }
 
 /* Corner security design details */
@@ -2532,9 +2532,9 @@ button[type="submit"].btn-enabled {
 
 .card-header {
   text-align: center;
-  margin-bottom: 4px;
+  margin-bottom: 2px;
   border-bottom: 2px solid var(--primary);
-  padding-bottom: 4px;
+  padding-bottom: 2px;
   position: relative;
   z-index: 1;
 }
@@ -2545,14 +2545,14 @@ button[type="submit"].btn-enabled {
   justify-content: space-between;
   width: 100%;
   padding: 0 2px;
-  margin: 0 auto 4px auto;
+  margin: 0 auto 2px auto;
   position: relative;
   z-index: 2;
 }
 
 .header-photos img.founder-photo-circle {
-  width: 50px !important;
-  height: 50px !important;
+  width: 48px !important;
+  height: 48px !important;
   border-radius: 50% !important;
   object-fit: cover !important;
   object-position: center top !important;
@@ -2562,8 +2562,8 @@ button[type="submit"].btn-enabled {
 }
 
 .header-photos img.trust-logo {
-  width: 52px !important;
-  height: 52px !important;
+  width: 50px !important;
+  height: 50px !important;
   object-fit: contain !important;
   border-radius: 0 !important;
   position: relative;
@@ -2571,8 +2571,8 @@ button[type="submit"].btn-enabled {
 }
 
 .header-photos img.leader-photo-circle {
-  width: 40px !important;
-  height: 40px !important;
+  width: 38px !important;
+  height: 38px !important;
   border-radius: 50% !important;
   object-fit: cover !important;
   object-position: center top !important;
@@ -2582,33 +2582,34 @@ button[type="submit"].btn-enabled {
 }
 
 .card-header h1 {
-  font-size: 0.82rem;
+  font-size: 0.8rem;
   font-weight: 800;
   color: var(--primary-dark);
-  margin-bottom: 1px;
+  margin-bottom: 0px;
   text-transform: uppercase;
-  line-height: 1.2;
+  line-height: 1.1;
 }
 
 .card-header p {
-  font-size: 0.6rem;
+  font-size: 0.58rem;
   font-weight: 700;
   color: var(--secondary-dark);
-  margin-bottom: 1px;
+  margin-bottom: 0px;
 }
 
 .card-header h2 {
-  font-size: 0.65rem;
+  font-size: 0.62rem;
   font-weight: 800;
   color: #0e0a0a;
   display: inline-block;
-  padding: 1px 6px;
+  padding: 0px 4px;
+  margin-top: 1px;
 }
 
 .member-photo {
-  width: 75px !important;
-  height: 90px !important;
-  margin: 0 auto 4px auto;
+  width: 70px !important;
+  height: 80px !important;
+  margin: 0 auto 2px auto;
   border: 2px solid var(--secondary);
   border-radius: var(--radius-sm);
   overflow: hidden;
@@ -2630,21 +2631,21 @@ button[type="submit"].btn-enabled {
   width: 100%;
   box-shadow: none;
   background: transparent;
-  margin-bottom: 4px;
+  margin-bottom: 0px;
 }
 
 .member-details td {
-  padding: 3px 3px 2px 3px;
-  border-bottom: 1px dashed var(--border-color);
-  font-size: 0.65rem;
-  line-height: 1.4;
-  vertical-align: bottom;
+  padding: 1px 2px !important;
+  border-bottom: none !important;
+  font-size: 0.61rem;
+  line-height: 1.25;
+  vertical-align: middle;
 }
 
 .member-details td:first-child {
   font-weight: 700;
   color: var(--text-muted);
-  width: 90px;
+  width: 85px;
   word-break: keep-all;
   overflow-wrap: normal;
 }
@@ -2678,28 +2679,28 @@ button[type="submit"].btn-enabled {
 
 .signature-section {
   text-align: right;
-  padding-top: 4px;
+  padding-top: 2px;
   border-top: 1px solid var(--border-color);
   margin-top: auto;
   flex-shrink: 0;
 }
 
 .signature-section img {
-  height: 28px;
-  max-width: 110px;
+  height: 24px;
+  max-width: 100px;
   margin-left: auto;
   margin-bottom: 1px;
 }
 
 .signature-section p {
-  font-size: 0.65rem;
+  font-size: 0.6rem;
   font-weight: 700;
-  margin-bottom: 1px;
+  margin-bottom: 0px;
   color: var(--text-dark);
 }
 
 .signature-section span {
-  font-size: 0.62rem;
+  font-size: 0.58rem;
   color: var(--text-dark);
   font-weight: 600;
   display: block;
